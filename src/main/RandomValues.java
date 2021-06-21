@@ -4,7 +4,9 @@ import java.util.Random;
 import java.text.DecimalFormat;
 
 public class RandomValues implements IStreamData {
-
+	/**
+	 * Generated random float values
+	 */
 	@Override
 	public float getBMSData() {
 		DecimalFormat decimalFormat = new DecimalFormat("0.00");
