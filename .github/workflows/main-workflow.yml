@@ -32,6 +32,8 @@ jobs:
       with:
         name: coverage
         path: ./target/site/jacoco
-        retention-days: 1    
+        retention-days: 1
+    - name: Build
+      run: javac src/main/SendData.java
     - name: Run
-      run: mvn compile exec:java -Dexec.mainClass="src\main\SendData"
+      run: java -ea -classpath . SendData
