@@ -34,4 +34,4 @@ jobs:
         path: ./target/site/jacoco
         retention-days: 1    
     - name: Run
-      run: mvn compile exec:java -Dexec.mainClass="src.main.SendData" | mvn compile exec:java -Dexec.mainClass="receiver.ReceiveData"
+      run: mvn compile exec:java -Dexec.mainClass="src.main.SendData"
