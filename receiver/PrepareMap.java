@@ -13,7 +13,7 @@ public class PrepareMap
 	{
 		incomingData = incomingData.replaceAll("[{]", "").replaceAll("}", ", ");
 		List<String> paramList = Arrays.asList(incomingData.split(", "));
-		setMapKey(paramList);
+		setMapKey(paramList); 
 		setMapValue(paramList);
 		return dataMap;
 	}
@@ -29,9 +29,8 @@ public class PrepareMap
 
 	public void setMapKey(List<String> paramList)
 	{
-		paramList.forEach(param -> {
-			dataMap.put(param.split("=")[0], new ArrayList<>());
-		});
+		for(int i=0;i<paramList.size();i++)
+			dataMap.put(paramList.get(i).split("=")[0], new ArrayList<>());
 		
 	}
 

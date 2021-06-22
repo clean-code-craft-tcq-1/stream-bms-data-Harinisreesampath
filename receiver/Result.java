@@ -16,7 +16,8 @@ public class Result {
 	}
 	
 	public static void printToConsole() {
-		message.forEach(msg -> System.out.println(msg));
+		for(String msg : message)
+			System.out.println(msg);
 	}
 	
 }
