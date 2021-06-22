@@ -28,7 +28,7 @@ public class ReceiverAction {
 	        .average()
 	        .orElse(0.0);
 			Result.setAverageMessage(paramName,average);
-		}
+		} 
 		catch(IndexOutOfBoundsException e)
 		{
 			throw new IndexOutOfBoundsException();

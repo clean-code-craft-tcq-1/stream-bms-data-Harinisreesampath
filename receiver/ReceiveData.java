@@ -2,28 +2,35 @@ package receiver;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
-public class ReceiveData 
-{
-	
-	public static void main(String arg[]) throws IOException {
-		try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)))
+public class ReceiveData {
+
+	public static void main(String arg[]) throws IOException 
+	{
+		try(Scanner sc = new Scanner(new InputStreamReader(System.in)))
 		{
-			String incomingData = reader.readLine();
+			String incomingData = "";
+			//read data from console as a string
+			while (sc.hasNext()) {
+				incomingData = incomingData.concat(sc.nextLine());
+			}
+			
 			PrepareMap prepareMap = new PrepareMap();
-			HashMap<String, List<Double>> map = prepareMap.prepareDataMap(incomingData);
+			Map<String, List<Double>> map = prepareMap.prepareDataMap(incomingData);
+			
 			ReceiverAction receiver = new ReceiverAction();
 			receiver.performAction(map);
-			
-		} 
-		catch (Exception e) 
-		{
+
+		} catch (Exception e) {
 			System.err.println(e);
 		}
 	}

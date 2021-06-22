@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PrepareMap 
 {
 	HashMap<String, List<Double>> dataMap = new HashMap<>();
 	
-	public HashMap<String, List<Double>> prepareDataMap(String incomingData) 
+	public Map<String, List<Double>> prepareDataMap(String incomingData) 
 	{
 		incomingData = incomingData.replaceAll("[{]", "").replaceAll("}", ", ");
 		List<String> paramList = Arrays.asList(incomingData.split(", "));
@@ -20,10 +21,11 @@ public class PrepareMap
 	
 	public void setMapValue(List<String> paramList) 
 	{
-		paramList.forEach(param -> {
+		for(String param : paramList)
+		{
 			String[] data = param.split("=");
 			dataMap.get(data[0]).add(Double.parseDouble(data[1]));
-		});
+		}
 		
 	}
 
