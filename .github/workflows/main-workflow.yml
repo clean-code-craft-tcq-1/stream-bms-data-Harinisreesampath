@@ -33,5 +33,8 @@ jobs:
         name: coverage
         path: ./target/site/jacoco
         retention-days: 1
+    - name: Build Receiver for prod
+      run: javac receiver/ReceiveData.java
+      
     - name: Build
-      run: mvn compile exec:java -Dexec.mainClass="sender.SendData" | mvn compile exec:java -Dexec.mainClass="receiver.ReceiveData"
+      run: mvn compile exec:java -Dexec.mainClass="sender.SendData" | java -ea -classpath . receiver.ReceiveData
