@@ -21,6 +21,7 @@ public class ReceiveData {
 			String incomingData = "";
 			//read data from console as a string
 			while (sc.hasNext()) {
+				System.out.println(incomingData);
 				incomingData = incomingData.concat(sc.nextLine());
 			}
 			
