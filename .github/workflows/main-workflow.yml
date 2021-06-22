@@ -34,6 +34,4 @@ jobs:
         path: ./target/site/jacoco
         retention-days: 1
     - name: Build
-      run: javac src/main/SendData.java
-    - name: Run
-      run: java -ea -classpath . SendData
+      run: mvn compile exec:java -Dexec.mainClass="sender.SendData" | mvn compile exec:java -Dexec.mainClass="receiver.ReceiveData"
