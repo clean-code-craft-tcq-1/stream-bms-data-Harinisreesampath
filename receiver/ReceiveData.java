@@ -26,7 +26,7 @@ public class ReceiveData {
 			
 			PrepareMap prepareMap = new PrepareMap();
 			Map<String, List<Double>> map = prepareMap.prepareDataMap(incomingData);
-			
+			System.out.println(map.get("Temperature"));
 			ReceiverAction receiver = new ReceiverAction();
 			receiver.performAction(map);
 
