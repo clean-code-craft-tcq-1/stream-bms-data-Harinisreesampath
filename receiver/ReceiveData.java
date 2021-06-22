@@ -16,7 +16,7 @@ public class ReceiveData {
 
 	public static void main(String arg[]) throws IOException 
 	{
-		try(Scanner sc = new Scanner(new InputStreamReader(System.in)))
+		try(Scanner sc = new Scanner(System.in))
 		{
 			String incomingData = "";
 			//read data from console as a string
