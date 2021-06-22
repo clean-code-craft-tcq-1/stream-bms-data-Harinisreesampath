@@ -36,3 +36,5 @@ jobs:
         name: coverage
         path: ./target/site/jacoco
         retention-days: 1    
+    - name: Build main
+      run: mvn compile exec:java - Dexec.mainClass="main.SendData"
