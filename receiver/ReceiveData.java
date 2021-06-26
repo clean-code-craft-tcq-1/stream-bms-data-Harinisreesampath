@@ -27,6 +27,7 @@ public class ReceiveData {
 				
 			}
 		}
+		System.out.println(incomingData);
 		PrepareMap prepareMap = new PrepareMap();
 		Map<String, List<Double>> map = prepareMap.prepareDataMap(incomingData);
 		ReceiverAction receiver = new ReceiverAction();
