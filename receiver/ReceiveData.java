@@ -20,6 +20,7 @@ public class ReceiveData {
 		try (BufferedReader lineReader = new BufferedReader(new InputStreamReader(System.in))) {
 			while (true) {
 				String line = lineReader.readLine();
+				System.out.println("LINE:"+line);
 				incomingData = incomingData.concat(line);
 				System.out.println(incomingData);
 				count++;
