@@ -21,6 +21,7 @@ public class ReceiveData {
 			while (true) {
 				String line = lineReader.readLine();
 				incomingData = incomingData.concat(line);
+				System.out.println(incomingData);
 				count++;
 				if (incomingCount == count)
 					break;
