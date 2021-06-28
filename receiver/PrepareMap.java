@@ -22,7 +22,6 @@ public class PrepareMap
 	public void setMapValue(List<String> paramList) 
 	{
 		paramList.forEach(param -> {
-			System.out.println(param);
 			String[] data = param.split("=");
 			dataMap.get(data[0]).add(Double.parseDouble(data[1]));
 		});
@@ -34,9 +33,6 @@ public class PrepareMap
 		paramList.forEach(param -> {
 			dataMap.put(param.split("=")[0], new ArrayList<>());
 		});
-		
-		System.out.println(dataMap.keySet().toString());
-		
 	}
 
 }
