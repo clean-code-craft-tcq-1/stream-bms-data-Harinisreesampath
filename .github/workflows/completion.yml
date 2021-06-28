@@ -37,7 +37,7 @@ jobs:
         path: ./target/site/jacoco
         retention-days: 1  
     - name: Build Sender for prod
-      run: javac sender/SendData.java  
+      run:  mvn compile exec:java -Dexec.mainClass="sender.SendData"  
       
     - name: Build Receiver for prod
       run: javac receiver/ReceiveData.java
