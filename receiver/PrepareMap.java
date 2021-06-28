@@ -21,10 +21,11 @@ public class PrepareMap
 	
 	public void setMapValue(List<String> paramList) 
 	{
-		paramList.forEach(param -> {
+		for(String param:paramList)
+		{
 			String[] data = param.split("=");
 			dataMap.get(data[0]).add(Double.parseDouble(data[1]));
-		});
+		}
 		
 	}
 
