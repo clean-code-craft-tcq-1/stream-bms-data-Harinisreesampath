@@ -14,7 +14,7 @@ public class ReceiveData {
 	Map<String, List<Double>> dataMap = new HashMap<>();
 
 	public static void main(String args[]) throws IOException {
-		int incomingCount = 14;
+		int incomingCount = 15;
 		String incomingData = "";
 		int count = 0;
 		try (BufferedReader lineReader = new BufferedReader(new InputStreamReader(System.in))) {
